@@ -1,0 +1,10 @@
+19:29:59 **** Build of configuration Debug for project OHTA ****
+make -j8 all 
+arm-none-eabi-size  OHTA.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5968	     20	   1572	   7560	   1d88	OHTA.elf
+Finished building: default.size.stdout
+ 
+
+19:29:59 Build Finished. 0 errors, 0 warnings. (took 253ms)
+

@@ -1,0 +1,16 @@
+11:31:28 **** Build of configuration Debug for project SRC_manual.4 ****
+make -j8 all 
+arm-none-eabi-g++ -o "SRC_manual.4.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\5164580\STM32f407_Chiron\SRC_manual.4\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SRC_manual.4.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: SRC_manual.4.elf
+ 
+arm-none-eabi-size  SRC_manual.4.elf 
+arm-none-eabi-objdump -h -S SRC_manual.4.elf  > "SRC_manual.4.list"
+   text	   data	    bss	    dec	    hex	filename
+  21340	    100	   2708	  24148	   5e54	SRC_manual.4.elf
+Finished building: default.size.stdout
+ 
+Finished building: SRC_manual.4.list
+ 
+
+11:31:28 Build Finished. 0 errors, 0 warnings. (took 578ms)
+

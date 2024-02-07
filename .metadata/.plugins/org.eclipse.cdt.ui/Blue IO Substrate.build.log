@@ -1,0 +1,97 @@
+11:54:24 **** Incremental Build of configuration Debug for project Blue IO Substrate ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:182:33: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  182 |           sprintf(scnt0, "ENC0:%d ", cnt0_f);
+      |                                ~^    ~~~~~~
+      |                                 |    |
+      |                                 int  uint32_t {aka long unsigned int}
+      |                                %ld
+../Core/Src/main.c:183:33: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  183 |           sprintf(scnt1, "ENC1:%d ", cnt1_f);
+      |                                ~^    ~~~~~~
+      |                                 |    |
+      |                                 int  uint32_t {aka long unsigned int}
+      |                                %ld
+../Core/Src/main.c:184:33: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  184 |           sprintf(scnt2, "ENC2:%d ", cnt2_f);
+      |                                ~^    ~~~~~~
+      |                                 |    |
+      |                                 int  uint32_t {aka long unsigned int}
+      |                                %ld
+../Core/Src/main.c:185:33: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  185 |           sprintf(scnt3, "ENC3:%d\r\n", cnt3_f);
+      |                                ~^       ~~~~~~
+      |                                 |       |
+      |                                 int     uint32_t {aka long unsigned int}
+      |                                %ld
+../Core/Src/main.c:186:38: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  186 |           HAL_UART_Transmit(&huart3, scnt0, strlen(scnt0) + 1, 0xFFFF);
+      |                                      ^~~~~
+      |                                      |
+      |                                      char *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:745:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+  745 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c:187:38: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  187 |           HAL_UART_Transmit(&huart3, scnt1, strlen(scnt1) + 1, 0xFFFF);
+      |                                      ^~~~~
+      |                                      |
+      |                                      char *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:745:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+  745 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c:188:38: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  188 |           HAL_UART_Transmit(&huart3, scnt2, strlen(scnt2) + 1, 0xFFFF);
+      |                                      ^~~~~
+      |                                      |
+      |                                      char *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:745:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+  745 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c:189:38: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  189 |           HAL_UART_Transmit(&huart3, scnt3, strlen(scnt3) + 1, 0xFFFF);
+      |                                      ^~~~~
+      |                                      |
+      |                                      char *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:745:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+  745 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c:229:38: warning: '
+ ' directive writing 3 bytes into a region of size between 0 and 2 [-Wformat-overflow=]
+  229 |           sprintf(ph7, "PHOTO7:%d\r\n ",p7);
+      |                                  ~~~~^
+../Core/Src/main.c:229:11: note: 'sprintf' output between 12 and 14 bytes into a destination of size 10
+  229 |           sprintf(ph7, "PHOTO7:%d\r\n ",p7);
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-g++ -o "Blue IO Substrate.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\5164580\STM32f407_Chiron\Blue IO Substrate\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Blue IO Substrate.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Blue IO Substrate.elf
+ 
+arm-none-eabi-size  Blue\ IO\ Substrate.elf 
+arm-none-eabi-objdump -h -S Blue\ IO\ Substrate.elf  > "Blue IO Substrate.list"
+   text	   data	    bss	    dec	    hex	filename
+  39128	    476	   2468	  42072	   a458	Blue IO Substrate.elf
+Finished building: default.size.stdout
+ 
+Finished building: Blue IO Substrate.list
+ 
+
+11:54:25 Build Finished. 0 errors, 9 warnings. (took 868ms)
+
